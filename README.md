@@ -27,10 +27,15 @@ shopify theme list --store bobs-bike-repair-and-customization.myshopify.com
 ```
 
 ## Automatic Git Integration
-There is a git action, defined in `.github/workflows/run-script-on-main.yml`. This script requires that we produce an API key from shopify.
+You can find information on how to integrate the official shopify github plugin [here.](https://shopify.dev/docs/storefronts/themes/tools/github)
+This setup is slightly different than a usual github repo, in that each *branch* represents a theme with no intention of merging branches. Work can still be done in a way that is source controlled - you can still branch a theme and merge back to it. But there's not a "main" branch, there's no reason to ever do a PR between themes, etc. This means that if you have a change, you'll have to apply it to each branch.
 
-### Generating the API key
+However, this is also aided by the fact that the branches themselves are automatically committed to as shopify saves them. Thus, there is a degree of version control among themes, and moreover, they can be edited in a simple text editor and simply imported. 
 
-
-### Placing the API Key
-Once you've generated the key, it should go in Settings > Secrets and variables > Actions, or you can follow this link structure: `https://github.com/{your github}/{your repo name}/settings/secrets/actions/new`. 
+### Creating a new theme,
+- Create the new theme in shopify.
+- Using the shopify cli, list themes and identify the theme.
+- Create a new branch and run the shell script
+```
+shopify theme pull --theme <your theme's id> --store <the base domain of your store> --path . --force
+```
