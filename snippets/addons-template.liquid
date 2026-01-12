@@ -13,7 +13,9 @@ Main Product Variant ID (replace with your main product's variant ID)
   {% for collection in collections %}
     Collection:
     {% for c in collection %}
-      {{ c }}
+       {% for d in c %}
+         {{ d }}
+       {% endfor %}
     {% endfor %}
   {% endfor %}
 <br/>AddOns: {{ collections['add-ons'] }}
