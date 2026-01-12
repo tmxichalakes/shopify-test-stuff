@@ -8,6 +8,8 @@
 {% assign matching_addons = collections['add-ons'].products | where: "tags", addon_tag %}
 {% if matching_addons.size > 0 %}
   <h3>Add-Ons (Charged Separately):</h3>
+  The add-on tag is {{ addon_tag }}
+  <p>Select as many add-ons as you like:</p>
   <div>
     {% for addon in matching_addons %}
       {% assign addon_variant = addon.variants.first %}
