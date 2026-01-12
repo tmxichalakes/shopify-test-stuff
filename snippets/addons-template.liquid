@@ -10,8 +10,9 @@ Main Product Variant ID (replace with your main product's variant ID)
 <br/>The add-on tag is {{ addon_tag }}
 <br/>CollectionSize: {{ collections.size }}
 <br/>Collections:
-  {% for key in collections %}
+  {% for collection in collections %}
     key: {{ key }}
+    {}
   {% endfor %}
 <br/>AddOns: {{ collections['add-ons'] }}
 The number of add-ons in the collection is {{ collections['add-ons'].products.size }}
