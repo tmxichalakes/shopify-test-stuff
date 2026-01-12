@@ -12,9 +12,10 @@ Main Product Variant ID (replace with your main product's variant ID)
 <p>Select as many add-ons as you like:</p>
 <div>
   {% for addon in addon_products %}
-  bork
-    {% assign addon_variant = addon.variants.first %}
-    <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
+    {% if addon.tags contains addon_tag %}
+      {% assign addon_variant = addon.variants.first %}
+      <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
+    {% endif %}
   {% endfor %}
 </div>
 
