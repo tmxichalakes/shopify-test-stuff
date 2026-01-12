@@ -6,43 +6,22 @@ Main Product Variant ID (replace with your main product's variant ID)
 {% endcomment %}
 
 {% assign addon_tag = "add-on-" | append: parent_product_code %}
-{% assign addon_collection = collections['add-ons'] %}
+{% assign addon_products = collections['add-ons'].products %}
 <br/>Collection Title: {{ addon_collection.title }}
 <br/>Collection Size: {{ addon_collection.products.size }}
 <br/>Collection all products count: {{ collections['add-ons'].all_products_count }}
-<br/>
-{% comment %} <br/>The parent product code = {{ parent_product_code }}
-<br/>The add-on tag is {{ addon_tag }}
-<br/>CollectionSize: {{ collections.size }}
-<br/>Collections: {{ collections }}
-<br/>
-  {% for collection in collections %}
-    borga
-    Collection: {{ collection }}
-    {% for c in collection %}
-      booga
-       {% for d in c %}
-         {{ d }}
-       {% endfor %}
-    {% endfor %}
-  {% endfor %}
 <br/>AddOns: {{ collections['add-ons'] }}
-The number of add-ons in the collection is {{ collections['add-ons'].products.size }} {% endcomment %}
-{% assign matching_addons = collections['add-ons'].products | where: "tags", addon_tag %}
+The number of add-ons in the collection is {{ collections['add-ons'].products.size }}
 
-{% if matching_addons.size > 0 %}
-  <h3>Add-Ons (Charged Separately):</h3>
-  <p>Select as many add-ons as you like:</p>
-  <div>
-    {% for addon in matching_addons %}
-		bork
-      {% assign addon_variant = addon.variants.first %}
-      <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
-    {% endfor %}
-  </div>
-{% else %}
-  There are no add-ons matching {{ addon_tag }}
-{% endif %}
+<h3>Add-Ons (Charged Separately):</h3>
+<p>Select as many add-ons as you like:</p>
+<div>
+  {% for addon in matching_addons %}
+  bork
+    {% assign addon_variant = addon.variants.first %}
+    <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
+  {% endfor %}
+</div>
 
 {% comment %} <script>
 document.getElementById('main-product-form').addEventListener('submit', async function(e) {
