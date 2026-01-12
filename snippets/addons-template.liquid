@@ -8,7 +8,7 @@ Main Product Variant ID (replace with your main product's variant ID)
 {% assign addon_tag = "add-on-" | append: parent_product_code %}
 {% assign addon_collection = collections['add-ons'] %}
 <br/>Collection Title: {{ addon_collection.title }}
-<br/>Collection Size: {{ addon_collection.size }}
+<br/>Collection Size: {{ addon_collection.products.size }}
 <br/>
 {% comment %} <br/>The parent product code = {{ parent_product_code }}
 <br/>The add-on tag is {{ addon_tag }}
