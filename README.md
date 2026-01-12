@@ -39,3 +39,6 @@ However, this is also aided by the fact that the branches themselves are automat
 ```
 shopify theme pull --theme <your theme's id> --store <the base domain of your store> --path . --force
 ```
+
+### Synchronizing an existing theme
+In order to update a theme following changes, you'll have to go to the options (the 3 dots) on the theme in the theme library and select "Reset to Latest Commit". This would functionally become part of the go-live process if you were using Git to synchronize edits made with a text editor. 

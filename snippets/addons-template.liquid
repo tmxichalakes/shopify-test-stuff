@@ -1,8 +1,9 @@
-<!-- Shopify Add-Ons Template: Main Product + Chargeable Add-Ons -->
-<!-- Place this in your product template or as a custom section/snippet -->
 {% comment %} 
-<!-- Main Product Variant ID (replace with your main product's variant ID) -->
-<input type="hidden" id="main-variant-id" value="{{ product.selected_or_first_available_variant.id }}"> {% endcomment %}
+Shopify Add-Ons Template: Main Product + Chargeable Add-Ons
+Place this in your product template or as a custom section/snippet
+Main Product Variant ID (replace with your main product's variant ID)
+<input type="hidden" id="main-variant-id" value="{{ product.selected_or_first_available_variant.id }}"> 
+{% endcomment %}
 
 {% assign addon_tag = "add-on-" | append: parent_product_code %}
 {% assign matching_addons = collections['add-ons'].products | where: "tags", addon_tag %}
@@ -12,6 +13,7 @@
   <p>Select as many add-ons as you like:</p>
   <div>
     {% for addon in matching_addons %}
+		bork
       {% assign addon_variant = addon.variants.first %}
       <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
     {% endfor %}
@@ -47,11 +49,12 @@ document.getElementById('main-product-form').addEventListener('submit', async fu
 });
 </script> {% endcomment %}
 
-<!-- Instructions:
+{% comment %}
+Instructions:
 1. This .liquid file uses the current product's first available variant for the main product.
 2. It loops through products in a collection called 'add-ons' for add-on checkboxes, and only includes add-ons whose tags match the pattern 'add-on-{parent_product_name}' (e.g., add-on-Widget).
 3. Place this code in your product template, section, or snippet.
 4. Style as needed.
 5. When rendering, pass the product code metafield as parent_product_code, e.g.:
   {% render 'addons-template', parent_product_code: product.metafields.global.parent_product_code %}
--->
+{% endcomment %}
