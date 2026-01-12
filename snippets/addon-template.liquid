@@ -11,6 +11,8 @@ Pass an 'addon' product object to this snippet.
   <span class="addon-title">{{ addon.title }}</span>
   <span class="addon-price">(+{{ addon_variant.price | money }})</span>
   
+  The metafields are {{ addon.metafields.custom }}
+
   {% assign additional_info_type = addon.metafields.custom.additional_info_type %}
   The additional info type is {{ additional_info_type }}
   {% if additional_info_type == "text" %}
