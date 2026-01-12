@@ -1,0 +1,55 @@
+<!-- Shopify Add-Ons Template: Main Product + Chargeable Add-Ons -->
+<!-- Place this in your product template or as a custom section/snippet -->
+{% comment %} 
+<!-- Main Product Variant ID (replace with your main product's variant ID) -->
+<input type="hidden" id="main-variant-id" value="{{ product.selected_or_first_available_variant.id }}"> {% endcomment %}
+
+{% assign addon_tag = "add-on-" | append: parent_product_code %}
+{% assign matching_addons = collections['add-ons'].products | where: "tags", addon_tag %}
+{% if matching_addons.size > 0 %}
+  <h3>Add-Ons (Charged Separately):</h3>
+  <div>
+    {% for addon in matching_addons %}
+      {% assign addon_variant = addon.variants.first %}
+      <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% comment %} <script>
+document.getElementById('main-product-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const mainVariantId = document.getElementById('main-variant-id').value;
+  const mainQuantity = parseInt(document.getElementById('main-quantity').value, 10);
+  const checkboxes = document.querySelectorAll('.addon-checkbox:checked');
+  let items = [
+    { id: mainVariantId, quantity: mainQuantity }
+  ];
+  checkboxes.forEach(cb => {
+    items.push({
+      id: cb.dataset.variantId,
+      quantity: mainQuantity
+    });
+  });
+  // Add all items to cart in one request
+  const res = await fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items })
+  });
+  if (res.ok) {
+    document.getElementById('cart-message').innerText = 'Items added to cart!';
+  } else {
+    document.getElementById('cart-message').innerText = 'Error adding to cart.';
+  }
+});
+</script> {% endcomment %}
+
+<!-- Instructions:
+1. This .liquid file uses the current product's first available variant for the main product.
+2. It loops through products in a collection called 'add-ons' for add-on checkboxes, and only includes add-ons whose tags match the pattern 'add-on-{parent_product_name}' (e.g., add-on-Widget).
+3. Place this code in your product template, section, or snippet.
+4. Style as needed.
+5. When rendering, pass the product code metafield as parent_product_code, e.g.:
+  {% render 'addons-template', parent_product_code: product.metafields.global.parent_product_code %}
+-->
