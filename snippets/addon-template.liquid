@@ -10,11 +10,7 @@ Pass an 'addon' product object to this snippet.
   <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}">
   <span class="addon-title">{{ addon.title }}</span>
   <span class="addon-price">(+{{ addon_variant.price | money }})</span>
-  
-  The metafields are {{ addon.metafields.custom }}
-
   {% assign additional_info_type = addon.metafields.custom.additional_info_type %}
-  The additional info type is {{ additional_info_type }}
   {% if additional_info_type == "text" %}
     <input type="text" class="addon-additional-info" name="addon-info-{{ addon_variant.id }}" placeholder="{{ addon.metafields.custom.additional_info_placeholder }}">
   {% endif %}
