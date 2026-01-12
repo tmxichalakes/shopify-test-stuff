@@ -6,10 +6,15 @@ Main Product Variant ID (replace with your main product's variant ID)
 {% endcomment %}
 
 {% assign addon_tag = "add-on-" | append: parent_product_code %}
+The parent product code = {{ parent_product_code }}
+The add-on tag is {{ addon_tag }}
+Collections: {{ collections }}
+AddOns: {{ collections['add-ons'] }}
+The number of add-ons in the collection is {{ collections['add-ons'].products.size }}
 {% assign matching_addons = collections['add-ons'].products | where: "tags", addon_tag %}
+
 {% if matching_addons.size > 0 %}
   <h3>Add-Ons (Charged Separately):</h3>
-  The add-on tag is {{ addon_tag }}
   <p>Select as many add-ons as you like:</p>
   <div>
     {% for addon in matching_addons %}
@@ -18,6 +23,8 @@ Main Product Variant ID (replace with your main product's variant ID)
       <input type="checkbox" class="addon-checkbox" data-variant-id="{{ addon_variant.id }}" value="{{ addon.title }}"> {{ addon.title }} (+{{ addon_variant.price | money }})<br>
     {% endfor %}
   </div>
+{% else %}
+  There are no add-ons matching {{ addon_tag }}
 {% endif %}
 
 {% comment %} <script>
