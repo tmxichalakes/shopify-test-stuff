@@ -85,10 +85,42 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "17683456545f63fd6d": {
+      "type": "apps",
+      "blocks": {
+        "easify_options_easify_product_options_8D4rWr": {
+          "type": "shopify://apps/easify-options/blocks/easify-product-options/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easify_options_easify_product_options_8D4rWr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1768345661a656672a": {
+      "type": "apps",
+      "blocks": {
+        "easify_options_easify_product_options_hyJCyh": {
+          "type": "shopify://apps/easify-options/blocks/easify-product-options/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easify_options_easify_product_options_hyJCyh"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
-    "featured_collection_HmFaQP"
+    "featured_collection_HmFaQP",
+    "17683456545f63fd6d",
+    "1768345661a656672a"
   ]
 }
