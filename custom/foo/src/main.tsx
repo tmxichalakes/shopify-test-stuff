@@ -5,6 +5,6 @@ import Foo from './Foo'
 
 createRoot(document.getElementById('foo-root')!).render(
   <StrictMode>
-    <Foo />
+    <Foo fooName="My Foo" />
   </StrictMode>,
 );

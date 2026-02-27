@@ -318,8 +318,11 @@
 					 <div id="bundle-root"></div>
 					 <script src="{{ 'bundle-builder.js' | asset_url }}" defer></script>
 
+
+					Here's anther component
 					<div id="foo-root"></div>
 					<script src="{{ 'foo.js' | asset_url }}" defer></script>
+					There was another component
 
 					{% render 'addons-template', parent_product_code: product.metafields.custom.product_code, parent_product_tags: product.tags %}
 						{% comment %}
