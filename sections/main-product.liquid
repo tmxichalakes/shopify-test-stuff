@@ -318,7 +318,10 @@
 					 <div id="bundle-root"></div>
 					 <script src="{{ 'bundle-builder.js' | asset_url }}" defer></script>
 
-					 {% render 'addons-template', parent_product_code: product.metafields.custom.product_code, parent_product_tags: product.tags %}
+					<div id="foo-root"></div>
+					<script src="{{ 'foo.js' | asset_url }}" defer></script>
+
+					{% render 'addons-template', parent_product_code: product.metafields.custom.product_code, parent_product_tags: product.tags %}
 						{% comment %}
 						HERE WERE CHANGES
 						{% endcomment %}

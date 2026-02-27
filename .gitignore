@@ -1,3 +1,5 @@
 theme_list.txt
 
+**/node_modules/
+
 !.gitkeep

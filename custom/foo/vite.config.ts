@@ -8,10 +8,10 @@ export default defineConfig({
 		outDir: "../assets/",
     	emptyOutDir: false, // Don't delete the output directory
 		rollupOptions: {
-			input: './bundle-builder/src/main.tsx',
+			input: './foo/src/main.tsx',
 			output: {
-				entryFileNames: 'bundle-builder.js',
-				assetFileNames: 'bundle-builder.css'
+				entryFileNames: 'foo.js',
+				assetFileNames: 'foo.css'
 			}
     	}
 	} 
