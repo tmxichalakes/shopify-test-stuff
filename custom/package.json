@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:bundle-builder": "vite build --config bundle-builder/vite.config.ts",
-    "build:foo": "vite build --config foo/vite.config.ts",
-    "build": "npm run build:bundle-builder && npm run build:foo",
+    "build:ccg-submit-button": "vite build --config ccg-submit-button/vite.config.ts",
+    "build": "npm run build:ccg-submit-button",
     "lint": "eslint .",
     "preview": "vite preview"
   },
