@@ -34,16 +34,16 @@
           "disabled": true,
           "settings": {}
         },
-        "ccg_product_configurator_addon_services_rT7ewc": {
-          "type": "shopify://apps/ccg-product-configurator/blocks/addon_services/019cb9bf-ba72-7d5a-b4af-817736856324",
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "ccg_product_configurator_ccg_addon_services_8TQdmW": {
+          "type": "shopify://apps/ccg-product-configurator/blocks/ccg_addon_services/019cb9bf-ba72-7d5a-b4af-817736856324",
           "settings": {
             "product": "{{product}}",
             "colour": "#ff0000"
           }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
         },
         "ccg_product_configurator_ccg_add_to_cart_buttons_qKQYzz": {
           "type": "shopify://apps/ccg-product-configurator/blocks/ccg_add_to_cart_buttons/019cb9bf-ba72-7d5a-b4af-817736856324",
@@ -69,8 +69,8 @@
         "vendor",
         "variant_picker",
         "quantity_selector",
-        "ccg_product_configurator_addon_services_rT7ewc",
         "price",
+        "ccg_product_configurator_ccg_addon_services_8TQdmW",
         "ccg_product_configurator_ccg_add_to_cart_buttons_qKQYzz",
         "buy_buttons",
         "share"
