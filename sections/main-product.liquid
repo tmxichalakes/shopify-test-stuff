@@ -315,7 +315,9 @@
 						HERE WERE CHANGES
 						{% endcomment %}
 						{%- when 'buy_buttons' -%}
-							<div id="ccg-submit-button-root"></div>
+							<div id="ccg-submit-button-root"
+								data-product-form-id="{{ product_form_id }}"
+							></div>
 							<script src="{{ 'ccg-submit-button.js' | asset_url }}" defer></script>
 						{%- when 'rating' -%}
 							{%- if product.metafields.reviews.rating.value != blank -%}
