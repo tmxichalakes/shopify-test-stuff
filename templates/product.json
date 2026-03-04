@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "ccg_product_configurator_star_rating_VnJBET": {
-          "type": "shopify://apps/ccg-product-configurator/blocks/star_rating/019cb9aa-dcf9-72ac-9c8e-87351e890a83",
-          "settings": {
-            "product": "{{product}}",
-            "colour": "#ff0000"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -45,16 +38,19 @@
           "type": "price",
           "settings": {}
         },
+        "ccg_product_configurator_star_rating_VnJBET": {
+          "type": "shopify://apps/ccg-product-configurator/blocks/star_rating/019cb9aa-dcf9-72ac-9c8e-87351e890a83",
+          "settings": {
+            "product": "{{product}}",
+            "colour": "#ff0000"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         },
         "share": {
           "type": "share",
@@ -65,14 +61,13 @@
         }
       },
       "block_order": [
-        "ccg_product_configurator_star_rating_VnJBET",
         "title",
         "vendor",
         "variant_picker",
         "quantity_selector",
         "price",
+        "ccg_product_configurator_star_rating_VnJBET",
         "buy_buttons",
-        "description",
         "share"
       ],
       "settings": {
