@@ -311,9 +311,6 @@
 						{%- when 'variant_picker' -%}
 							{% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 					{% render 'addons-template', parent_product_code: product.metafields.custom.product_code, parent_product_tags: product.tags %}
-						{% comment %}
-						HERE WERE CHANGES
-						{% endcomment %}
 						{%- when 'buy_buttons' -%}
 							<div id="ccg-submit-button-root"
 								data-product-form-id="{{ product_form_id }}"
@@ -447,7 +444,6 @@
 					{% render 'icon-arrow' %}
 				</a>
 			</product-info>
-			bbbbbb
 		</div>
 		{%- if section.settings.media_position == 'right' -%}
 			{% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
